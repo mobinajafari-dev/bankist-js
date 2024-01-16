@@ -97,3 +97,9 @@ document.querySelector('.nav__link').addEventListener('click', function (e) {
 //   .addEventListener('click', function (e) {}, true);
 
 // document.querySelector(".nav").addEventListener("click", function (e) {});
+
+// routing
+
+function navigateToIndex() {
+  window.location.href = 'index.html';
+}
