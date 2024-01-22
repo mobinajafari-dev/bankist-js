@@ -1,6 +1,5 @@
 'use strict';
 
-///////////////////////////////////////
 // Modal window
 
 const modal = document.querySelector('.modal');
@@ -110,6 +109,8 @@ function navigateToIndex() {
   window.location.href = 'index.html';
 }
 
+// scrolling
+
 document.querySelector('.nav__links').addEventListener('click', function (e) {
   e.preventDefault();
 
@@ -117,7 +118,7 @@ document.querySelector('.nav__links').addEventListener('click', function (e) {
   if (e.target.classList.contains('nav__link')) {
     const id = e.target.getAttribute('href');
     if (id === 'login.html') {
-      window.open(id, '_blank'); // Open in a new tab
+      window.open(id, '_blank');
     } else {
       document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
     }
@@ -129,7 +130,6 @@ document.querySelector('.nav__links').addEventListener('click', function (e) {
 tabsContainer.addEventListener('click', function (e) {
   const clicked = e.target.closest('.operations__tab');
 
-  // Guard clause
   if (!clicked) return;
 
   // Remove active classes
@@ -163,7 +163,7 @@ const handleHover = function (e) {
 nav.addEventListener('mouseover', handleHover.bind(0.5));
 nav.addEventListener('mouseout', handleHover.bind(1));
 
-// sticky navigation 1
+// sticky navigation - first soloution
 
 // const initialCoords = section1.getBoundingClientRect();
 
@@ -206,6 +206,7 @@ allSections.forEach(function (section) {
 });
 
 // lazy loading image
+
 const imgTargets = document.querySelectorAll('img[data-src]');
 
 const loadImage = function (entries, observer) {
